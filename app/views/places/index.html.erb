@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Type</th>
+    <th>Place type</th>
     <th>Schedule</th>
     <th>Latitude</th>
     <th>Longitude</th>
@@ -16,7 +16,7 @@
 <% @places.each do |place| %>
   <tr>
     <td><%= place.title %></td>
-    <td><%= place.type %></td>
+    <td><%= place.place_type %></td>
     <td><%= place.schedule %></td>
     <td><%= place.latitude %></td>
     <td><%= place.longitude %></td>
