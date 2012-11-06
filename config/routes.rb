@@ -1,4 +1,6 @@
 CampusMTY::Application.routes.draw do
+  resources :professors
+
   resources :places
 
   # The priority is based upon order of creation:
