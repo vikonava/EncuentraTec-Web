@@ -70,10 +70,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-
-    respond_to do |format|
-      format.html { redirect_to comments_url }
-      format.json { head :no_content }
-    end
+	redirect_to place_path(@comment.place), :notice => "Successfully destroyed subject."
+    
   end
 end

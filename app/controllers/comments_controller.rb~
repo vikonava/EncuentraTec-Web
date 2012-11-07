@@ -41,15 +41,11 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
-
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render json: @comment, status: :created, location: @comment }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    @comment.place = Place.find(params[:place_id])
+    if @comment.save
+      redirect_to place_comment_path(@comment.place, @comment), :notice => "Successfully created subject."
+    else
+      render :action => 'new'
     end
   end
 
@@ -74,10 +70,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-
-    respond_to do |format|
-      format.html { redirect_to comments_url }
-      format.json { head :no_content }
-    end
+	redirect_to place_comment_path(@comment.place), :notice => "Successfully destroyed subject."
+    
   end
 end

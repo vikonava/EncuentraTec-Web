@@ -55,7 +55,8 @@
     <td><%= comment.place_id %></td>
     <td><%= comment.comment %></td>
     <td><%= link_to 'Show',  place_comment_path(@place, comment) %></td>
-    
+    <td><%= link_to 'Destroy', place_comment_path(comment.place,comment), :confirm => 'Are you sure?', :method => :delete %></td>
+
   </tr>
 <% end %>
 </table>
