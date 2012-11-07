@@ -1,5 +1,5 @@
 CampusMTY::Application.routes.draw do
-  
+  resources :professors
 
   resources :places do
 	resources :comments
