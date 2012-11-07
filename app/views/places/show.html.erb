@@ -30,6 +30,38 @@
   <%= @place.image %>
 </p>
 
+<p>
+  <b>Description:</b>
+  <%= @place.description %>
+</p>
+
 
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
+
+<p> Comentarios</p>
+
+<table>
+  <tr>
+    <th>Place</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @place.comments.each do |comment| %>
+  <tr>
+    <td><%= comment.place_id %></td>
+    <td><%= comment.comment %></td>
+    <td><%= link_to 'Show',  place_comment_path(@place, comment) %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+	<%= link_to "New Post", new_place_comment_path(@place) %>
+
+

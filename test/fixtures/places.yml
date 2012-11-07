@@ -4,14 +4,16 @@ one:
   title: MyString
   place_type: 1
   schedule: MyString
-  latitude: 1.5
-  longitude: 1.5
+  latitude: MyString
+  longitude: MyString
   image: MyString
+  description: MyText
 
 two:
   title: MyString
   place_type: 1
   schedule: MyString
-  latitude: 1.5
-  longitude: 1.5
+  latitude: MyString
+  longitude: MyString
   image: MyString
+  description: MyText

@@ -1,0 +1,10 @@
+<%= form_for [Place.find(params[:place_id]),@comment] do |f| %>
+
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

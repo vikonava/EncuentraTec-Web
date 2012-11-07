@@ -4,9 +4,10 @@ class CreatePlaces < ActiveRecord::Migration
       t.string :title
       t.integer :place_type
       t.string :schedule
-      t.float :latitude
-      t.float :longitude
+      t.string :latitude
+      t.string :longitude
       t.string :image
+      t.text :description
 
       t.timestamps
     end

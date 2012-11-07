@@ -1,3 +1,4 @@
 class Place < ActiveRecord::Base
-  attr_accessible :image, :latitude, :longitude, :place_type, :schedule, :title
+  has_many :comments
+  attr_accessible :description, :image, :latitude, :longitude, :place_type, :schedule, :title
 end

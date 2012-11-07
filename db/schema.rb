@@ -11,17 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121002144128) do
+ActiveRecord::Schema.define(:version => 20121106201352) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "place_id"
+    t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "places", :force => true do |t|
     t.string   "title"
     t.integer  "place_type"
     t.string   "schedule"
-    t.float    "latitude"
-    t.float    "longitude"
+    t.string   "latitude"
+    t.string   "longitude"
     t.string   "image"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
